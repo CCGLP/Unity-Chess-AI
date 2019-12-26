@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 26429566}
   - component: {fileID: 26429565}
   m_Layer: 0
-  m_Name: TableroSquares
+  m_Name: GraphicBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7252,14 +7252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413a5256e1f80cd46b3a3cd50d34faa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  values:
-  - {fileID: 11400000, guid: 6bf1231accef2ef47bb40665d92580fa, type: 2}
-  - {fileID: 11400000, guid: 4079aabb2621fc044a0c9effeb7bc0eb, type: 2}
-  - {fileID: 11400000, guid: f27266ff014f0264099bda76ec14ae6d, type: 2}
-  - {fileID: 11400000, guid: 33a903ee01541be49951e1d9cf02c079, type: 2}
-  - {fileID: 11400000, guid: 0d034b8070701d34db92996016a5f607, type: 2}
-  - {fileID: 11400000, guid: 1f4c58ef2080fac469e5a5b63613b57d, type: 2}
-  - {fileID: 11400000, guid: 18b9227a451dc20468feb547c73b2e0b, type: 2}
   kingPrefab: {fileID: 1355071522619072, guid: 63780b4850cf2634a91e14eb74281465, type: 3}
   queenPrefab: {fileID: 1088706179193826, guid: fd3ac2166b25aa44eb3760b20203e1b4,
     type: 3}
@@ -8394,7 +8386,7 @@ GameObject:
   - component: {fileID: 1981605976}
   - component: {fileID: 1981605975}
   m_Layer: 0
-  m_Name: TableroBorde
+  m_Name: GraphicBoardBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8714,7 +8706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2100018110}
   m_Layer: 0
-  m_Name: Squares
+  m_Name: LogicBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

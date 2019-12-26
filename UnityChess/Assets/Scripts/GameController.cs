@@ -9,20 +9,12 @@ using UnityEngine.SceneManagement;
 
 public class GameController : Singleton<GameController> {
 
-
-    [SerializeField]
-    public List<SquareTableValues> values; 
-
-
     [Header("Pieces prefabs")]
     [SerializeField]
     private GameObject kingPrefab;
     [SerializeField] private GameObject queenPrefab, rookPrefab, bishopPrefab, knightPrefab, pawnPrefab;
 
-    [SerializeField] private Material materialWhite, materialBlack; 
-
-    private Player playerOne, playerTwo;
-    private Player actualPlayer, otherPlayer;
+    [SerializeField] private Material materialWhite, materialBlack;
 
     [SerializeField]
     private CanvasGroup cg;
@@ -30,65 +22,50 @@ public class GameController : Singleton<GameController> {
     private TextMeshProUGUI textEnd, textButtonChange;
 
     [SerializeField]
-    private int queenValue;
+    private int queenValue; 
     [SerializeField]
     private SquareTableValues queenSquareTableValues;
+
+    private Player playerOne, playerTwo;
+    private Player actualPlayer, otherPlayer;
+
+    
     private MiniMax miniMax;
     private List<PieceBehaviour> allPiecesBehaviour;
+
+    
     private bool is3D = true;
 
 
 
     
-    int[] GetArrayInRow(int[,] matrix, int row)
-    {
-        int[] newArr = new int[matrix.GetLength(1)]; 
-        for (int i = 0; i< matrix.GetLength(1); i++)
-        {
-            newArr[i] = matrix[row, i]; 
-        }
-
-
-        return newArr; 
-    }
-    //void Save(SquareTableValues table)
-    //{
-
-    //    SquareTableJSONWrapper wr = new SquareTableJSONWrapper();
-    //    wr.firstRow = GetArrayInRow(table.squareValues, 0);
-    //    wr.secondRow = GetArrayInRow(table.squareValues, 1);
-    //    wr.thirdRow = GetArrayInRow(table.squareValues, 2);
-    //    wr.fourthRow = GetArrayInRow(table.squareValues, 3);
-    //    wr.fifthRow = GetArrayInRow(table.squareValues, 4);
-    //    wr.sixthRow = GetArrayInRow(table.squareValues, 5);
-    //    wr.seventhRow = GetArrayInRow(table.squareValues, 6);
-    //    wr.eigthRow = GetArrayInRow(table.squareValues, 7);
-    //    Debug.Log(Application.dataPath); 
-    //    File.WriteAllText(Application.dataPath + "/" + table.name+".json", JsonUtility.ToJson(wr)); 
-
-    //}
 
     void Start () {
-
-        //for (int i = 0; i< values.Count; i++)
-        //{
-        //    Save(values[i]);
-        //}
-        
-
-
-
-
-
 
         playerOne = new Player(materialWhite, Player.PlayerType.HUMAN, 7);
         playerTwo = new Player(materialBlack, Player.PlayerType.AI);
         miniMax = new MiniMax(); 
-        var board = Board.Instance.SquareBehaviourMatrix; 
 
-        for (int i = 0; i< 8; i++)
+        InstantiatePlayerOnePieces();
+        InstantiatePlayerTwoPieces(); 
+
+    
+        actualPlayer = playerOne;
+        otherPlayer = playerTwo;
+
+        allPiecesBehaviour = new List<PieceBehaviour>(GameObject.FindObjectsOfType<PieceBehaviour>()); 
+
+        EvaluatePlayers(); 
+    }
+
+
+    private void InstantiatePlayerOnePieces()
+    {
+        var board = Board.Instance.SquareBehaviourMatrix;
+
+        for (int i = 0; i < 8; i++)
         {
-            InstantiatePiece(PieceType.PAWN,board[1, i], playerOne); 
+            InstantiatePiece(PieceType.PAWN, board[1, i], playerOne);
         }
         InstantiatePiece(PieceType.ROOK, board[0, 0], playerOne);
         InstantiatePiece(PieceType.ROOK, board[0, 7], playerOne);
@@ -101,10 +78,11 @@ public class GameController : Singleton<GameController> {
 
         InstantiatePiece(PieceType.QUEEN, board[0, 3], playerOne);
         InstantiatePiece(PieceType.KING, board[0, 4], playerOne);
+    }
 
-
-
-
+    private void InstantiatePlayerTwoPieces()
+    {
+        var board = Board.Instance.SquareBehaviourMatrix;
         for (int i = 0; i < 8; i++)
         {
             InstantiatePiece(PieceType.PAWN, board[6, i], playerTwo);
@@ -120,17 +98,14 @@ public class GameController : Singleton<GameController> {
 
         InstantiatePiece(PieceType.QUEEN, board[7, 3], playerTwo);
         InstantiatePiece(PieceType.KING, board[7, 4], playerTwo);
-
-
-        actualPlayer = playerOne;
-        otherPlayer = playerTwo;
-
-        allPiecesBehaviour = new List<PieceBehaviour>(GameObject.FindObjectsOfType<PieceBehaviour>()); 
-
-        EvaluatePlayers(); 
     }
 
-   
+    /// <summary>
+    /// Instantiate a Piece of the given Type in a given square of the board. 
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="squareBehaviour"></param>
+    /// <param name="player"></param>
     public void InstantiatePiece(PieceType type,SquareBehaviour squareBehaviour, Player player)
     {
         GameObject prefab = null;

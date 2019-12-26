@@ -109,6 +109,13 @@ public class Player  {
         return base.GetHashCode();
     }
 
+
+
+    /// <summary>
+    /// Function that evaluates if the possible moves are allowed and filters them. 
+    /// </summary>
+    /// <param name="otherPlayer"></param>
+    /// <param name="b"></param>
     public void EvaluateCheckOffMoves(Player otherPlayer, Square[,] b = null)
     {
         
@@ -123,7 +130,7 @@ public class Player  {
             actualBoard = Board.Instance.GenerateBoardCopy(b); 
         }
 
-        //Genero los movimientos de las copias
+        //Copies the player state and generates the possible moves.
         Player copyMe = new Player(this, actualBoard);
         Player copyOther = new Player(otherPlayer, actualBoard);
         copyMe.Evaluate(actualBoard);
@@ -142,7 +149,7 @@ public class Player  {
 
             for (int j = 0; j < moves.Count; j++)
             {
-                //Efectuo el movimiento y genero de nuevo los movimientos del otro jugador para ver si mi movimiento es válido
+                //Makes the move and checks with the other player move to see if my move is valid. 
                 var previousPiece = piece.PossibleMoves[j].Square.PieceContainer;
                 var previousSquare = piece.ActualSquare; 
               
@@ -151,8 +158,8 @@ public class Player  {
                 copyOther.Evaluate(actualBoard);
 
 
-
-                if (piece is King) //Compruebo si mi movimiento es válido. SI mi pieza es el rey, compruebo si están en esta pieza, y si no compruebo la posición del rey que he guardado anteriormente
+                //Checks if the move is possible. If my piece is the king check if some of the other player moves eat him. 
+                if (piece is King) 
                 {
                     if (copyOther.CheckIfSquareIsInMoves(piece.ActualSquare))
                     {
