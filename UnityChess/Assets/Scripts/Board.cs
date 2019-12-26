@@ -15,7 +15,7 @@ public class Board : Singleton<Board> {
         base.Awake(); 
         squareMatrix = new Square[8,8];
         squareBehaviourMatrix = new SquareBehaviour[8, 8]; 
-        var gameSquares = GameObject.Find("Squares").transform; 
+        var gameSquares = GameObject.Find("LogicBoard").transform; 
         int counter = 0; 
         for (int i = 0; i< 8; i++)
         {
@@ -30,7 +30,10 @@ public class Board : Singleton<Board> {
 
 	}
     
-
+    /// <summary>
+    /// When you click a square this code is called. Code checks if a square contains a piece you have or if a square clicked is an allowed move.
+    /// </summary>
+    /// <param name="square"></param>
     public void SquareClicked(SquareBehaviour square)
     {
         if (square.Square.PieceContainer != null && square.Square.PieceContainer.Propietary.Equals(GameController.Instance.ActualPlayer) &&
@@ -58,6 +61,11 @@ public class Board : Singleton<Board> {
         }
     }
 
+    /// <summary>
+    /// Return Move if the square passed is in the list of possibleMoves else returns null
+    /// </summary>
+    /// <param name="square"></param>
+    /// <returns></returns>
     private Move GetMoveFromPossibles (Square square)
     {
         for (int i = 0; i< possibleMovesActive.Count; i++)
@@ -81,7 +89,10 @@ public class Board : Singleton<Board> {
         }
     }
 
-
+    /// <summary>
+    /// Generate a 1-1 copy of our board
+    /// </summary>
+    /// <returns></returns>
     public Square[,] GenerateBoardCopy()
     {
         Square[,] copy = new Square[8, 8]; 
@@ -95,6 +106,11 @@ public class Board : Singleton<Board> {
         return copy; 
     }
 
+    /// <summary>
+    /// Generate a 1-1 copy of the given board
+    /// </summary>
+    /// <param name="board"></param>
+    /// <returns></returns>
     public Square[,]GenerateBoardCopy(Square[,] board)
     {
         Square[,] copy = new Square[8, 8];

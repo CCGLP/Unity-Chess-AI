@@ -19,7 +19,7 @@ public class MiniMax
         vueltas = 0;
         int maxValue = MiniMaxFunctionRoot(maxPlayer, minPlayer, board);
        
-        Debug.Log("Número de tableros evaluados: " + vueltas.ToString());
+        Debug.Log("Total Boards Evaluated: " + vueltas.ToString());
         pieceToMove.Move(bestMove.Square.RelatedBehaviour);
         bestMove.RunCallback();
 
@@ -35,7 +35,7 @@ public class MiniMax
             for (int j = 0; j < maxPlayer.Pieces[i].PossibleMoves.Count; j++)
             {
 
-                // Genero copias en el root para evaluar cada movimiento y se lo paso al MiniMax
+                //Generate a copy of the game state (players and board)
                 Square[,] boardCopy = Board.Instance.GenerateBoardCopy(board);
                 Player maxCopy = new Player(maxPlayer, boardCopy);
                 Player minCopy = new Player(minPlayer, boardCopy);
@@ -52,8 +52,8 @@ public class MiniMax
                 maxCopy.Pieces[i].Move(maxCopy.Pieces[i].PossibleMoves[j].Square);
                 maxCopy.Pieces[i].PossibleMoves[j].RunCallback();
 
-                int value =  //-Negamax(minCopy, maxCopy, boardCopy, false, maxDepth - 1, int.MinValue, int.MaxValue);
-                MiniMaxFunction(maxCopy, minCopy, boardCopy, false, maxDepth - 1, int.MinValue, int.MaxValue); //
+                int value = MiniMaxFunction(maxCopy, minCopy, boardCopy, false, maxDepth - 1, int.MinValue, int.MaxValue); 
+
                 if (value >= bestValue)
                 {
                     bestValue = value;
@@ -75,7 +75,7 @@ public class MiniMax
             return EvaluateBoard(maxPlayer, minPlayer) ;
         }
 
-        //Genero los movimientos posibles de cada jugador
+        //Generate all the moves
         Player actualPlayer = maxTurn ? maxPlayer : minPlayer;
         Player otherPlayer = maxTurn ? minPlayer : maxPlayer;
 
@@ -97,7 +97,7 @@ public class MiniMax
 
                 var previousPiece = moves[j].Square.PieceContainer;
                 var previousSquare = piece.ActualSquare;
-                //Muevo para luego deshacer el movimiento
+                //Temporal move with the board copy. After this we will restore the board to its previous state.  
                 piece.Move(moves[j].Square);
                 piece.PossibleMoves[j].RunCallback();
 
@@ -115,7 +115,7 @@ public class MiniMax
                     beta = Mathf.Min(beta, bestValue);
                 }
 
-                //Deshago movimiento
+                //Restore the previous state of the board to continue the loop
                 piece.Move(previousSquare);
                 otherPlayer.AddPiece(previousPiece);
                 if (previousPiece != null)
@@ -124,7 +124,7 @@ public class MiniMax
                 }
                 piece.PossibleMoves[j].RunCallbackReset();
 
-                //Podo
+                //Prune
                 if (beta <= alpha)
                 {
                     return bestValue;
@@ -135,81 +135,8 @@ public class MiniMax
             }
         }
 
-        //Si no hay movimientos posibles, devuelvo bestValue, que es el mínimo score posible si estoy en max y el máximo en min (Jaque mate)
+      
         return bestValue  ;
-    }
-
-
-
-    public int Negamax(Player actualPlayer, Player otherPlayer, Square[,] board, bool maxTurn, int depth, int alpha, int beta)
-    {
-        if (depth == 0)
-        {
-            return (EvaluateBoard(actualPlayer, otherPlayer)* (maxTurn? -1 : 1));
-        }
-
-
-        //Genero los movimientos posibles de cada jugador
-        actualPlayer.Evaluate(board);
-        otherPlayer.Evaluate(board);
-        actualPlayer.EvaluateCastlings(board, otherPlayer);
-        otherPlayer.EvaluateCastlings(board, actualPlayer);
-        actualPlayer.EvaluateCheckOffMoves(otherPlayer, board);
-        otherPlayer.ResetPawnsState();
-
-        int bestValue =int.MinValue;
-        beta = beta == int.MinValue ? int.MaxValue : beta;  //Int bug.
-        for (int i = 0; i < actualPlayer.Pieces.Count; i++)
-        {
-            var piece = actualPlayer.Pieces[i];
-            var moves = actualPlayer.Pieces[i].PossibleMoves;
-            for (int j = 0; j < actualPlayer.Pieces[i].PossibleMoves.Count; j++)
-            {
-                vueltas++;
-
-                var previousPiece = moves[j].Square.PieceContainer;
-                var previousSquare = piece.ActualSquare;
-                //Muevo para luego deshacer el movimiento
-                piece.Move(moves[j].Square);
-                piece.PossibleMoves[j].RunCallback();
-
-                Square[,] copyBoard = Board.Instance.GenerateBoardCopy(board);
-                int value =-Negamax(new Player(otherPlayer, copyBoard), new Player(actualPlayer, copyBoard), copyBoard, !maxTurn, depth - 1, -beta, -alpha);
-                
-                if (bestValue < value)
-                {
-                    bestValue = value; 
-                }
-
-                alpha = Mathf.Max(alpha, bestValue);
-
-
-
-                //Deshacer movimiento
-                piece.Move(previousSquare);
-                otherPlayer.AddPiece(previousPiece);
-                if (previousPiece != null)
-                {
-                    previousPiece.Move(board[moves[j].Square.Y, moves[j].Square.X]);
-                }
-                piece.PossibleMoves[j].RunCallbackReset();
-
-                //Podar
-                if (beta <= alpha)
-                {
-                    return bestValue;
-                }
-                
-              
-
-            }
-
-
-
-        }
-
-        //Si no hay movimientos posibles, devuelvo bestValue, que es el mínimo score posible si estoy en max y el máximo en min (Jaque mate)
-        return bestValue;
     }
 
 

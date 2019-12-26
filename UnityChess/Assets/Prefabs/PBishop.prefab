@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4608069731670586}
   - component: {fileID: 212079525401433786}
   m_Layer: 0
-  m_Name: Alfil2D
+  m_Name: Bishop2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300020, guid: 27ddec6bf87988544913b84bdd3c7214, type: 3}
+  m_Sprite: {fileID: 2515587500238446403, guid: fc902fe91e436a844894b93c17e0fa9e,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +94,7 @@ GameObject:
   - component: {fileID: 33036545725509036}
   - component: {fileID: 23736014872522100}
   m_Layer: 0
-  m_Name: Alfil3D
+  m_Name: Bishop3D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +172,7 @@ GameObject:
   - component: {fileID: 4663608643514016}
   - component: {fileID: 114675710470284680}
   m_Layer: 0
-  m_Name: Alfil
+  m_Name: PBishop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,5 +209,7 @@ MonoBehaviour:
   type: 4
   pieceValue: 330
   values: {fileID: 11400000, guid: 6bf1231accef2ef47bb40665d92580fa, type: 2}
-  spriteWhite: {fileID: 21300020, guid: 27ddec6bf87988544913b84bdd3c7214, type: 3}
-  spriteBlack: {fileID: 21300008, guid: 27ddec6bf87988544913b84bdd3c7214, type: 3}
+  spriteWhite: {fileID: 2515587500238446403, guid: fc902fe91e436a844894b93c17e0fa9e,
+    type: 3}
+  spriteBlack: {fileID: 8210861292294955285, guid: fc902fe91e436a844894b93c17e0fa9e,
+    type: 3}

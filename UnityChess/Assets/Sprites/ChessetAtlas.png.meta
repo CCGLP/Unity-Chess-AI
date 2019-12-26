@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 27ddec6bf87988544913b84bdd3c7214
+guid: fc902fe91e436a844894b93c17e0fa9e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 21300000
-    second: ChessPiecesArray_0
+      213: 3432736839130010900
+    second: pngguru.com_0
   - first:
-      213: 21300002
-    second: ChessPiecesArray_1
+      213: -1717502012141642764
+    second: pngguru.com_1
   - first:
-      213: 21300004
-    second: ChessPiecesArray_2
+      213: 2515587500238446403
+    second: pngguru.com_2
   - first:
-      213: 21300006
-    second: ChessPiecesArray_3
+      213: 5854094739026040358
+    second: pngguru.com_3
   - first:
-      213: 21300008
-    second: ChessPiecesArray_4
+      213: -7415873913358178959
+    second: pngguru.com_4
   - first:
-      213: 21300010
-    second: ChessPiecesArray_5
+      213: 14836019936920713
+    second: pngguru.com_5
   - first:
-      213: 21300012
-    second: ChessPiecesArray_6
+      213: -5114810975309587403
+    second: pngguru.com_6
   - first:
-      213: 21300014
-    second: ChessPiecesArray_7
+      213: 4753985030565952438
+    second: pngguru.com_7
   - first:
-      213: 21300016
-    second: ChessPiecesArray_8
+      213: 8210861292294955285
+    second: pngguru.com_8
   - first:
-      213: 21300018
-    second: ChessPiecesArray_9
+      213: -3843037445616679044
+    second: pngguru.com_9
   - first:
-      213: 21300020
-    second: ChessPiecesArray_10
+      213: -2153444252339638645
+    second: pngguru.com_10
   - first:
-      213: 21300022
-    second: ChessPiecesArray_11
+      213: 6084733202145191569
+    second: pngguru.com_11
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -81,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1000
+  spritePixelsToUnits: 5300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,7 +105,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -117,19 +117,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
@@ -141,19 +129,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -165,18 +141,18 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChessPiecesArray_0
+      name: pngguru.com_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 60
-        width: 60
-        height: 60
+        y: 333.5
+        width: 333.33334
+        height: 333.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a1078a02639cac4f94410d6be13ce81
-      internalID: 21300000
+      spriteID: 238ad590d48985f4dac538ec24d6ab99
+      internalID: 3432736839130010900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChessPiecesArray_1
+      name: pngguru.com_1
       rect:
         serializedVersion: 2
-        x: 60
-        y: 60
-        width: 60
-        height: 60
+        x: 333
+        y: 333.5
+        width: 333.33334
+        height: 333.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9913fc4a47f0db249934fc8090ad44f0
-      internalID: 21300002
+      spriteID: 253c1a9ea62eeae4ca25054bc69cde89
+      internalID: -1717502012141642764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChessPiecesArray_2
+      name: pngguru.com_2
       rect:
         serializedVersion: 2
-        x: 120
-        y: 60
-        width: 60
-        height: 60
+        x: 666
+        y: 333.5
+        width: 333.33334
+        height: 333.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53404497181c0cf4fb0eb7723e417c22
-      internalID: 21300004
+      spriteID: 4b1bfc08fdae7c548a8737f4cfb29075
+      internalID: 2515587500238446403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChessPiecesArray_3
+      name: pngguru.com_3
       rect:
         serializedVersion: 2
-        x: 180
-        y: 60
-        width: 60
-        height: 60
+        x: 999
+        y: 333.5
+        width: 333.33334
+        height: 333.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +223,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee8191ee228942c4a9a14c112cc92896
-      internalID: 21300006
+      spriteID: 947be2ceca78d58429c45aa2ecf9dc8d
+      internalID: 5854094739026040358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChessPiecesArray_4
+      name: pngguru.com_4
       rect:
         serializedVersion: 2
-        x: 240
-        y: 60
-        width: 60
-        height: 60
+        x: 1332
+        y: 333.5
+        width: 333.33334
+        height: 333.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +244,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be09c743d32c4b3439b006d566ed7872
-      internalID: 21300008
+      spriteID: 1f623f47d7f3ab34cbaa81fd1bc40720
+      internalID: -7415873913358178959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChessPiecesArray_5
+      name: pngguru.com_5
       rect:
         serializedVersion: 2
-        x: 300
-        y: 60
-        width: 60
-        height: 60
+        x: 1665
+        y: 333.5
+        width: 333.33334
+        height: 333.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,20 +265,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4601d2aaa4b312a4eb0eb2fcfb6b4fe2
-      internalID: 21300010
+      spriteID: 3619f0324d4ad4e4e9712b9550351d90
+      internalID: 14836019936920713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChessPiecesArray_6
+      name: pngguru.com_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 60
-        height: 60
+        y: 0.5
+        width: 333.33334
+        height: 333.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,20 +286,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85aa563605c40f94991d4ee8485a0c41
-      internalID: 21300012
+      spriteID: d94e3f8b31893614fb8fed59ec881829
+      internalID: -5114810975309587403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChessPiecesArray_7
+      name: pngguru.com_7
       rect:
         serializedVersion: 2
-        x: 60
-        y: 0
-        width: 60
-        height: 60
+        x: 333
+        y: 0.5
+        width: 333.33334
+        height: 333.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,20 +307,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d5219ffbe303244495db77d9496c48b
-      internalID: 21300014
+      spriteID: 5432f2ea6d5dc16409fd0b68181f8918
+      internalID: 4753985030565952438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChessPiecesArray_8
+      name: pngguru.com_8
       rect:
         serializedVersion: 2
-        x: 120
-        y: 0
-        width: 60
-        height: 60
+        x: 666
+        y: 0.5
+        width: 333.33334
+        height: 333.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,20 +328,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86d64689778a0444e939c9e18e7fca23
-      internalID: 21300016
+      spriteID: 1c73f9aa20cb51445a1d648ee0f820f4
+      internalID: 8210861292294955285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChessPiecesArray_9
+      name: pngguru.com_9
       rect:
         serializedVersion: 2
-        x: 180
-        y: 0
-        width: 60
-        height: 60
+        x: 999
+        y: 0.5
+        width: 333.33334
+        height: 333.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,20 +349,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc710cc2c2562c045a088bfd8da77683
-      internalID: 21300018
+      spriteID: 140274436cc206747b71a8d4821bec37
+      internalID: -3843037445616679044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChessPiecesArray_10
+      name: pngguru.com_10
       rect:
         serializedVersion: 2
-        x: 240
-        y: 0
-        width: 60
-        height: 60
+        x: 1332
+        y: 0.5
+        width: 333.33334
+        height: 333.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,20 +370,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76f6f0caa7d0bd745b290a32855256a6
-      internalID: 21300020
+      spriteID: 060488d083df498448218b8e1fa4c396
+      internalID: -2153444252339638645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChessPiecesArray_11
+      name: pngguru.com_11
       rect:
         serializedVersion: 2
-        x: 300
-        y: 0
-        width: 60
-        height: 60
+        x: 1665
+        y: 0.5
+        width: 333.33334
+        height: 333.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,8 +391,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baac561328108aa41b4f0337ac4004f9
-      internalID: 21300022
+      spriteID: 785f2cbac6df05443a1603604cbb2e90
+      internalID: 6084733202145191569
       vertices: []
       indices: 
       edges: []
@@ -424,7 +400,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0f4eaec67905c2445a84584d9c8dd465
+    spriteID: d11d2d85a99247641907a5e6feee13c8
     internalID: 0
     vertices: []
     indices: 
